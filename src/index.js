@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const {conectString} = require('../lock');
+const bodyParser = require('body-parser');
+
+
+const userRoute = require('./routes/userRoute');
 
 const conection = mongoose.connect(conectString,  {useNewUrlParser: true , useUnifiedTopology: true }  );
 if(conection){
@@ -10,5 +14,9 @@ if(conection){
     console.log("não conectado")
 
 }
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.listen(8000);
+
+app.use('/user',userRoute);
