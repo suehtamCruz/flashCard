@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 
 
 const userRoute = require('./routes/userRoute');
+const cardRoute = require('./routes/cardRoute');
 
 const conection = mongoose.connect(conectString,  {useNewUrlParser: true , useUnifiedTopology: true }  );
 if(conection){
@@ -20,3 +21,4 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.listen(8000);
 
 app.use('/user',userRoute);
+app.use('/cards',cardRoute);

@@ -15,7 +15,7 @@ exports.getUsers = async () => {
 }
 
 exports.updateUser = async (id,data) => {
-    let update = await User.findByIdAndUpdate(id,{
+     await User.findByIdAndUpdate(id,{
         user : data.user,
         pass : data.pass,
     });
