@@ -24,6 +24,18 @@ exports.getUsers = async (require , response) => {
         })
     }
 }
+exports.getCards = async (require , response ) => {
+    try{
+        let cardsUser = await repo.getCards(require.params.id);
+        response.status(200).json(cardsUser);
+    }catch(e){
+        response.status(400).json({
+            message : "Erro ao consultar cards do usuário!",
+            erro : e
+        })
+    }
+
+}
 exports.update = async (require , response) =>{
     try{
         let user = await repo.updateUser(require.params.id , require.body);

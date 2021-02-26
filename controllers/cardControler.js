@@ -5,7 +5,8 @@ const repo = require('../repository/cardRepository');
 exports.createCard = async (require , response) => {
     await repo.create({
         questao : require.body.questao,
-        resposta : require.body.resposta
+        resposta : require.body.resposta,
+        user : require.body.user
     })
     response.status(201).json({
         message : "Card criado com sucesso!"
@@ -27,7 +28,7 @@ exports.getCards = async (require , response) => {
 
 exports.updateCard = async (require , response) => {
     try {
-        await repo.update(require.params.id , require.body);
+        await repo.updateCard(require.params.id , require.body);
         response.status(200).json({
             message : "Card atualizado com sucesso!"
         })

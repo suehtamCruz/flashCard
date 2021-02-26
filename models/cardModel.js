@@ -9,6 +9,10 @@ const SchemaCard = new Schema({
     resposta : {
         type : String,
         required : true
+    },
+    user : {
+        type : String,
+        required : true,
     }
 })
 module.exports = mongoose.model('Card', SchemaCard);

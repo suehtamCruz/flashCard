@@ -9,14 +9,19 @@ exports.create = async (data) =>{
 }
 
 exports.lista = async () => {
-    let listaCard = await Card.find({},'id questao resposta');
+    let listaCard = await Card.find({},'id questao resposta user');
     return listaCard;
 }
+exports.getCardsUser = async (id) => {
+    let cardUser = await Card.find({user : id},'id questao resposta user');
+    return cardUser;
+}
 
-exports.update = async (id,data) => {
+exports.updateCard = async (id,data) => {
     await Card.findByIdAndUpdate(id,{
         questao : data.questao,
-        resposta : data.resposta
+        resposta : data.resposta,
+        idUser : data.idUser,
     })
 }
 exports.delete = async (id) => {
