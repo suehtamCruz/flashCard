@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const {conectString} = require('../lock');
 const bodyParser = require('body-parser');
-
+const cors = require('cors');
 
 const userRoute = require('./routes/userRoute');
 const cardRoute = require('./routes/cardRoute');
@@ -15,6 +15,7 @@ if(conection){
     console.log("não conectado")
 
 }
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
