@@ -1,0 +1,25 @@
+{
+  "name": "flashCard",
+  "version": "1.0.0",
+  "description": "projeto de FBD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suehtamCruz/flashCard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suehtamCruz/flashCard/issues"
+  },
+  "homepage": "https://github.com/suehtamCruz/flashCard#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
+    "mongoose": "^5.11.18"
+  }
+}
