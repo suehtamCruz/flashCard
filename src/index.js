@@ -19,7 +19,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.listen(8000);
+// app.listen(8000);
 
 app.use('/user',userRoute);
 app.use('/cards',cardRoute);
