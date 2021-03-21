@@ -1,0 +1,13 @@
+{
+    "routes":[
+    {
+        "src" : "/",
+        "dest": "/src/routes/userRoute.js"
+    },
+    {
+        "src": "/",
+        "dets" : "/src/routes.cardRoute.js"
+    }]
+
+    
+}

@@ -24,5 +24,8 @@
     "express": "^4.17.1",
     "express-generator": "^4.16.1",
     "mongoose": "^5.11.18"
+  },
+  "devDependencies": {
+    "@vercel/node": "^1.9.1"
   }
 }
