@@ -5,6 +5,7 @@ const {conectString} = require('../lock');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+
 const userRoute = require('./routes/userRoute');
 const cardRoute = require('./routes/cardRoute');
 
@@ -15,11 +16,19 @@ if(conection){
     console.log("não conectado")
 
 }
-app.use(cors());
+// app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // app.listen(8000);
+app.use((req, res, next) => {
+
+    res.header("Access-Control-Allow-Origin", "*");
+
+    res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+    app.use(cors());
+    next();
+});
 
 app.use('/user',userRoute);
 app.use('/cards',cardRoute);
